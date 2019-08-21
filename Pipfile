@@ -1,0 +1,56 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+flake8 = "*"
+mocker = "*"
+mypy = "*"
+parameterized = "*"
+pylint = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+radon = "*"
+requests_mock = "*"
+fixturefilehandler = "*"
+
+[packages]
+# To process downloads in parallel
+aiohttp = "*"
+# To analyze htmls
+beautifulsoup4 = "*"
+# To process images to remove small images like Emoji and thumbnail
+Pillow = "*"
+# To add / subtract dates
+python-dateutil = "*"
+# To read yaml file as config
+pyyaml = "*"
+# To convert json to model
+dataclasses-json = "*"
+# Official doc recomends to use
+# @see https://docs.python.org/ja/3/library/urllib.request.html
+requests = "*"
+# To analyze m3u8 file
+m3u8 = "*"
+# To download video
+ffmpeg-python = "*"
+# To read yaml file as config
+lazy-object-proxy = "*"
+yamldataclassconfig = "*"
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+# dataclasses-json 0.2.7 depends on marshmallow 3.0.0rc6
+allow_prereleases = true
+
+[scripts]
+start = "python archive.py"
+test = "cd tests && pytest"
+coverage = "cd tests && pytest --verbose --cov=videoarchiver --cov-report=term-missing"
+flake8 = "flake8 --max-line-length=120 --statistics --show-source --radon-show-closures ."
+cc = "radon cc --show-complexity --min B ."
+mi = "radon mi --show ."
