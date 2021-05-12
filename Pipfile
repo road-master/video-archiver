@@ -3,19 +3,6 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
-[dev-packages]
-flake8 = "*"
-mocker = "*"
-mypy = "*"
-parameterized = "*"
-pylint = "*"
-pytest = "*"
-pytest-cov = "*"
-pytest-mock = "*"
-radon = "*"
-requests_mock = "*"
-fixturefilehandler = "*"
-
 [packages]
 # To process downloads in parallel
 aiohttp = "*"
@@ -40,17 +27,29 @@ ffmpeg-python = "*"
 lazy-object-proxy = "*"
 yamldataclassconfig = "*"
 
-[requires]
-python_version = "3.7"
+[dev-packages]
+coverage = "*"
+fixturefilehandler = "*"
+flake8 = "*"
+# To use flake8 --radon-show-closures
+flake8-polyfill = "*"
+invoke = "*"
+isort = "*"
+mocker = "*"
+mypy = "*"
+parameterized = "*"
+# To use black
+pipenv-setup = "*"
+pylint = "*"
+pytest = "*"
+pytest-mock = "*"
+radon = "*"
+requests_mock = "*"
+xenon = "*"
 
-[pipenv]
-# dataclasses-json 0.2.7 depends on marshmallow 3.0.0rc6
-allow_prereleases = true
+[requires]
+python_version = "3.9"
 
 [scripts]
 start = "python archive.py"
-test = "cd tests && pytest"
-coverage = "cd tests && pytest --verbose --cov=videoarchiver --cov-report=term-missing"
-flake8 = "flake8 --max-line-length=120 --statistics --show-source --radon-show-closures ."
-cc = "radon cc --show-complexity --min B ."
-mi = "radon mi --show ."
+test = "pytest tests"

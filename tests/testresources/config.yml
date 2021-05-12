@@ -1,0 +1,12 @@
+tv_asahi:
+  mail_address: mail@address.tv.asahi
+  password: password_tv_asahi
+  list_program_id:
+    - tgs
+    - joshiryu_logirl
+niconico:
+  mail_address: mail@address.niconico
+  password: password_niconico
+  list_program_id:
+    - lv61315784
+    - lv83183479
