@@ -142,4 +142,4 @@ yamloutput/*
 !yamloutput/.gitkeep
 videooutput/*
 !videooutput/.gitkeep
-config.yml
+/config.yml
