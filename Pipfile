@@ -28,25 +28,28 @@ lazy-object-proxy = "*"
 yamldataclassconfig = "*"
 
 [dev-packages]
+coverage = "*"
+fixturefilehandler = "*"
 flake8 = "*"
+# To use flake8 --radon-show-closures
+flake8-polyfill = "*"
+invoke = "*"
+isort = "*"
 mocker = "*"
 mypy = "*"
 parameterized = "*"
+# To use black
+pipenv-setup = "*"
 pylint = "*"
 pytest = "*"
-pytest-cov = "*"
 pytest-mock = "*"
 radon = "*"
 requests_mock = "*"
-fixturefilehandler = "*"
+xenon = "*"
 
 [requires]
 python_version = "3.9"
 
 [scripts]
 start = "python archive.py"
-test = "cd tests && pytest"
-coverage = "cd tests && pytest --verbose --cov=videoarchiver --cov-report=term-missing"
-flake8 = "flake8 --max-line-length=120 --statistics --show-source --radon-show-closures ."
-cc = "radon cc --show-complexity --min B ."
-mi = "radon mi --show ."
+test = "pytest tests"
