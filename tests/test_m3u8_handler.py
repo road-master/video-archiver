@@ -1,7 +1,12 @@
 import m3u8
 
-from tests.testlibraries.instance_resource import FILE_PLAYLIST_TEST_DATA, URL_PLAYLIST, URI_EXAMPLE, \
-    PLAYLIST_2800000, PLAYLIST_1700000
+from tests.testlibraries.instance_resource import (
+    FILE_PLAYLIST_TEST_DATA,
+    PLAYLIST_1700000,
+    PLAYLIST_2800000,
+    URI_EXAMPLE,
+    URL_PLAYLIST,
+)
 from videoarchiver.m3u8_handler import M3U8Handler
 
 

@@ -4,10 +4,10 @@ from pathlib import Path
 from requests.cookies import RequestsCookieJar
 
 from videoarchiver.m3u8_handler import M3U8Handler
-from videoarchiver.tvasahi.path_builder import PathBuilder
 from videoarchiver.tvasahi.client_for_back_end import ClientForBackEnd
 from videoarchiver.tvasahi.html_analyzer import HtmlAnalyzer
 from videoarchiver.tvasahi.models import Episode
+from videoarchiver.tvasahi.path_builder import PathBuilder
 
 
 class EpisodeMediaArchiver:
@@ -25,15 +25,15 @@ class EpisodeMediaArchiver:
     def archive_image_if_has_not_archived(self, url: str):
         path = PathBuilder.build_archive_image_file(self.path_archive_directory, url)
         if path.exists():
-            print(f'Image is already archived. file = {str(path)}')
+            print(f"Image is already archived. file = {str(path)}")
             return
         with path.open("wb") as file_image:
             file_image.write(ClientForBackEnd.download(url))
 
     def archive_video_if_has_not_archived(self, cookies_login: RequestsCookieJar):
-        path_file = self.path_archive_directory / f'{self.episode.episode_name_for_windows_path}.mp4'
+        path_file = self.path_archive_directory / f"{self.episode.episode_name_for_windows_path}.mp4"
         if path_file.exists():
-            print(f'Video is already archived. file = {str(path_file)}')
+            print(f"Video is already archived. file = {str(path_file)}")
             return
         soup = ClientForBackEnd.request_episode_page(self.episode, cookies_login)
         url_playlist = HtmlAnalyzer.extract_url_playlist(soup)

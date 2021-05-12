@@ -1,4 +1,4 @@
-from typing import List, Dict, Optional, Union
+from typing import Dict, List, Optional, Union
 
 from videoarchiver.tvasahi.models import Episode
 
@@ -12,4 +12,4 @@ class DictionaryConverter:
     def convert_to_model(dict_episode: Dict[str, Optional[Union[int, str]]]) -> Episode:
         dict_episode_lower_case = {k.lower(): v for k, v in dict_episode.items()}
         # noinspection PyTypeChecker
-        return Episode.schema(unknown='EXCLUDE').load(dict_episode_lower_case)  # type: ignore
+        return Episode.schema(unknown="EXCLUDE").load(dict_episode_lower_case)  # type: ignore

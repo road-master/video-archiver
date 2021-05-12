@@ -1,5 +1,5 @@
-from datetime import datetime
 from dataclasses import dataclass, field
+from datetime import datetime
 from typing import Optional
 
 from dataclasses_json import DataClassJsonMixin
@@ -13,11 +13,14 @@ class Episode(DataClassJsonMixin):
     article_id: int
     caption: str
     delivery_start_date: datetime = field(
-        metadata={'dataclasses_json': {
-            'encoder': datetime.isoformat,
-            'decoder': datetime.fromisoformat,
-            'mm_field': fields.DateTime(format='iso')
-        }})
+        metadata={
+            "dataclasses_json": {
+                "encoder": datetime.isoformat,
+                "decoder": datetime.fromisoformat,
+                "mm_field": fields.DateTime(format="iso"),
+            }
+        }
+    )
     directory: str
     episode_code: int
     episode_id: int
