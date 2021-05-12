@@ -41,11 +41,7 @@ lazy-object-proxy = "*"
 yamldataclassconfig = "*"
 
 [requires]
-python_version = "3.7"
-
-[pipenv]
-# dataclasses-json 0.2.7 depends on marshmallow 3.0.0rc6
-allow_prereleases = true
+python_version = "3.9"
 
 [scripts]
 start = "python archive.py"
