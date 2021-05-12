@@ -3,19 +3,6 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
-[dev-packages]
-flake8 = "*"
-mocker = "*"
-mypy = "*"
-parameterized = "*"
-pylint = "*"
-pytest = "*"
-pytest-cov = "*"
-pytest-mock = "*"
-radon = "*"
-requests_mock = "*"
-fixturefilehandler = "*"
-
 [packages]
 # To process downloads in parallel
 aiohttp = "*"
@@ -39,6 +26,19 @@ ffmpeg-python = "*"
 # To read yaml file as config
 lazy-object-proxy = "*"
 yamldataclassconfig = "*"
+
+[dev-packages]
+flake8 = "*"
+mocker = "*"
+mypy = "*"
+parameterized = "*"
+pylint = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+radon = "*"
+requests_mock = "*"
+fixturefilehandler = "*"
 
 [requires]
 python_version = "3.9"
