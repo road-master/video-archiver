@@ -13,7 +13,10 @@ class ArchiveStep(MembershipSiteArchiveStep):
     """This class implements archiving steps for media files at some of web site."""
 
     def __init__(
-        self, client_for_back_end: Type[ClientForBackEnd], path_directory_download: Path, path_directory_cache: Path,
+        self,
+        client_for_back_end: Type[ClientForBackEnd],
+        path_directory_download: Path,
+        path_directory_cache: Path,
     ):
         super().__init__(client_for_back_end, path_directory_download)
         self.episode_loader = EpisodeLoader(path_directory_cache)
